@@ -147,6 +147,12 @@ doc_events = {
     },
     "Purchase Receipt Item": {
         "validate": "mughal_packages.mughal_packages.doctype.purchase_receipt.purchase_receipt.set_secondary_uom_on_item_add"
+    },
+    "Delivery Note": {
+        "validate": "mughal_packages.mughal_packages.doctype.delivery_note.delivery_note.get_secondary_uom_from_item"
+    },
+    "Delivery Note Item": {
+        "validate": "mughal_packages.mughal_packages.doctype.delivery_note.delivery_note.set_secondary_uom_on_item_add"
     }
 }
 
