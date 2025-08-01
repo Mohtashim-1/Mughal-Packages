@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-27 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "posting_date",
+  "posting_time",
+  "set_posting_time",
+  "due_date",
+  "customer",
+  "customer_name",
+  "tax_id",
+  "company",
+  "company_tax_id",
+  "amended_from",
+  "rejection_section",
+  "rejection_reason",
+  "rejection_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "rejection_section",
+   "fieldtype": "Section Break",
+   "label": "Rejection Information"
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Select",
+   "label": "Rejection Reason",
+   "options": "Incomplete Information\nIncorrect Data\nMissing Documents\nPolicy Violation\nOther",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejection_notes",
+   "fieldtype": "Text",
+   "label": "Rejection Notes",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-27 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mughal Packages",
+ "name": "Sales Invoice",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+} 

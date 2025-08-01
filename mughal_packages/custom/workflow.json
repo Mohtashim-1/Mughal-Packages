@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-27 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "workflow_name",
+  "document_type",
+  "is_active",
+  "send_email_alert",
+  "workflow_state_field",
+  "workflow_states",
+  "transitions",
+     "rejection_section",
+   "enable_rejection_reason",
+   "rejection_reason_field",
+   "rejection_notes_field",
+   "rejection_states"
+ ],
+ "fields": [
+  {
+   "fieldname": "rejection_section",
+   "fieldtype": "Section Break",
+   "label": "Rejection Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_rejection_reason",
+   "fieldtype": "Check",
+   "label": "Enable Rejection Reason",
+   "description": "When enabled, users will be required to provide a reason when rejecting documents"
+  },
+  {
+   "fieldname": "rejection_reason_field",
+   "fieldtype": "Data",
+   "label": "Rejection Reason Field",
+   "description": "Field name in the document where rejection reason will be stored (e.g., 'rejection_reason')",
+   "depends_on": "eval:doc.enable_rejection_reason==1"
+  },
+  {
+   "fieldname": "rejection_notes_field",
+   "fieldtype": "Data",
+   "label": "Rejection Notes Field",
+   "description": "Field name in the document where rejection notes will be stored (e.g., 'rejection_notes')",
+   "depends_on": "eval:doc.enable_rejection_reason==1"
+  },
+  {
+   "fieldname": "rejection_states",
+   "fieldtype": "Small Text",
+   "label": "Custom Rejection States",
+   "description": "Enter custom rejection state names (one per line). Leave empty to use default states.",
+   "depends_on": "eval:doc.enable_rejection_reason==1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-27 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mughal Packages",
+ "name": "Workflow",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+} 

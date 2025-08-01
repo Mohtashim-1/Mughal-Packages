@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/mughal_packages/css/mughal_packages.css"
-# app_include_js = "/assets/mughal_packages/js/mughal_packages.js"
+app_include_js = "/assets/mughal_packages/js/workflow_rejection.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/mughal_packages/css/mughal_packages.css"
@@ -137,13 +137,18 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Workflow": {
+		"validate": "mughal_packages.mughal_packages.doctype.custom_workflow.custom_workflow.validate_workflow",
+        "on_update": "mughal_packages.mughal_packages.doctype.custom_workflow.custom_workflow.check_workflow_rejection_required"
+	},
+    "Purchase Receipt": {
+        "validate": "mughal_packages.mughal_packages.doctype.purchase_receipt.purchase_receipt.get_secondary_uom_from_item"
+    },
+    "Purchase Receipt Item": {
+        "validate": "mughal_packages.mughal_packages.doctype.purchase_receipt.purchase_receipt.set_secondary_uom_on_item_add"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
